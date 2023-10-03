@@ -28,7 +28,7 @@ function toast(message, status) {
 export function fetchMovies() {
   return async (dispatch) => {
     try {
-      const res = await fetch("https://api.kresnawijaya.tech/movies", {
+      const res = await fetch("http://localhost:3000/movies", {
         headers: {
           access_token: localStorage.getItem("access_token"),
         },
@@ -45,7 +45,7 @@ export function fetchMovies() {
 export function addMovies(movieData) {
   return async () => {
     try {
-      const res = await fetch("https://api.kresnawijaya.tech/movies", {
+      const res = await fetch("http://localhost:3000/movies", {
         method: "POST",
         headers: {
           access_token: localStorage.getItem("access_token"),
@@ -68,7 +68,7 @@ export function addMovies(movieData) {
 export function fetchMovieDetail(slug) {
   return async (dispatch) => {
     try {
-      const res = await fetch(`https://api.kresnawijaya.tech/movies/${slug}`, {
+      const res = await fetch(`http://localhost:3000/movies/${slug}`, {
         headers: {
           access_token: localStorage.getItem("access_token"),
         },
@@ -85,17 +85,14 @@ export function fetchMovieDetail(slug) {
 export function editMovie(movieData, id) {
   return async () => {
     try {
-      const res = await fetch(
-        `https://api.kresnawijaya.tech/movies/update/${id}`,
-        {
-          method: "PUT",
-          headers: {
-            access_token: localStorage.getItem("access_token"),
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(movieData),
-        }
-      );
+      const res = await fetch(`http://localhost:3000/movies/update/${id}`, {
+        method: "PUT",
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movieData),
+      });
       if (!res.ok) {
         console.log("Failed to edit movie");
       }
@@ -111,15 +108,12 @@ export function editMovie(movieData, id) {
 export function deleteMovies(id) {
   return async (dispatch) => {
     try {
-      const res = await fetch(
-        `https://api.kresnawijaya.tech/movies/delete/${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            access_token: localStorage.getItem("access_token"),
-          },
-        }
-      );
+      const res = await fetch(`http://localhost:3000/movies/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+        },
+      });
       if (res.ok) {
         dispatch(fetchMovies());
         toast(`Delete movie success!`, "success");
@@ -135,7 +129,7 @@ export function deleteMovies(id) {
 export function fetchGenres() {
   return async (dispatch) => {
     try {
-      const res = await fetch("https://api.kresnawijaya.tech/genres", {
+      const res = await fetch("http://localhost:3000/genres", {
         headers: {
           access_token: localStorage.getItem("access_token"),
         },
@@ -152,7 +146,7 @@ export function fetchGenres() {
 export function addGenres(genreData) {
   return async () => {
     try {
-      const res = await fetch("https://api.kresnawijaya.tech/genres", {
+      const res = await fetch("http://localhost:3000/genres", {
         method: "POST",
         headers: {
           access_token: localStorage.getItem("access_token"),
@@ -175,7 +169,7 @@ export function addGenres(genreData) {
 export function fetchGenreDetail(id) {
   return async (dispatch) => {
     try {
-      const res = await fetch(`https://api.kresnawijaya.tech/genres/${id}`, {
+      const res = await fetch(`http://localhost:3000/genres/${id}`, {
         headers: {
           access_token: localStorage.getItem("access_token"),
         },
@@ -192,17 +186,14 @@ export function fetchGenreDetail(id) {
 export function editGenre(genreData, id) {
   return async () => {
     try {
-      const res = await fetch(
-        `https://api.kresnawijaya.tech/genres/update/${id}`,
-        {
-          method: "PUT",
-          headers: {
-            access_token: localStorage.getItem("access_token"),
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(genreData),
-        }
-      );
+      const res = await fetch(`http://localhost:3000/genres/update/${id}`, {
+        method: "PUT",
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(genreData),
+      });
       if (!res.ok) {
         console.log("Failed to edit genre");
       }
@@ -218,15 +209,12 @@ export function editGenre(genreData, id) {
 export function deleteGenres(id) {
   return async (dispatch) => {
     try {
-      const res = await fetch(
-        `https://api.kresnawijaya.tech/genres/delete/${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            access_token: localStorage.getItem("access_token"),
-          },
-        }
-      );
+      const res = await fetch(`http://localhost:3000/genres/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+        },
+      });
       if (res.ok) {
         dispatch(fetchGenres());
         toast(`Delete genre success!`, "success");
@@ -242,7 +230,7 @@ export function deleteGenres(id) {
 export function fetchUsers() {
   return async (dispatch) => {
     try {
-      const res = await fetch("https://api.kresnawijaya.tech/users", {
+      const res = await fetch("http://localhost:3000/users", {
         headers: {
           access_token: localStorage.getItem("access_token"),
         },
@@ -259,7 +247,7 @@ export function fetchUsers() {
 export function addUsers(userData) {
   return async () => {
     try {
-      const res = await fetch("https://api.kresnawijaya.tech/users", {
+      const res = await fetch("http://localhost:3000/users", {
         method: "POST",
         headers: {
           access_token: localStorage.getItem("access_token"),
@@ -282,7 +270,7 @@ export function addUsers(userData) {
 export function fetchUserDetail(id) {
   return async (dispatch) => {
     try {
-      const res = await fetch(`https://api.kresnawijaya.tech/users/${id}`, {
+      const res = await fetch(`http://localhost:3000/users/${id}`, {
         headers: {
           access_token: localStorage.getItem("access_token"),
         },
@@ -300,17 +288,14 @@ export function editUser(userData, id) {
   return async () => {
     try {
       console.log(userData, "apanihhhh");
-      const res = await fetch(
-        `https://api.kresnawijaya.tech/users/update/${id}`,
-        {
-          method: "PUT",
-          headers: {
-            access_token: localStorage.getItem("access_token"),
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(userData),
-        }
-      );
+      const res = await fetch(`http://localhost:3000/users/update/${id}`, {
+        method: "PUT",
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
       if (!res.ok) {
         console.log("Failed to edit user");
       }
@@ -325,15 +310,12 @@ export function editUser(userData, id) {
 export function deleteUsers(id) {
   return async (dispatch) => {
     try {
-      const res = await fetch(
-        `https://api.kresnawijaya.tech/users/delete/${id}`,
-        {
-          method: "DELETE",
-          headers: {
-            access_token: localStorage.getItem("access_token"),
-          },
-        }
-      );
+      const res = await fetch(`http://localhost:3000/users/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          access_token: localStorage.getItem("access_token"),
+        },
+      });
       if (res.ok) {
         dispatch(fetchUsers());
         toast(`Delete admin success!`, "success");
@@ -349,7 +331,7 @@ export function deleteUsers(id) {
 export function handleLogin(form) {
   return async (dispatch) => {
     try {
-      const res = await fetch("https://api.kresnawijaya.tech/users/login", {
+      const res = await fetch("http://localhost:3000/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

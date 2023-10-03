@@ -74,7 +74,7 @@ export default function Movie() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
-                    {movies.map((movie) => {
+                    {movies?.map((movie) => {
                       return <MovieRow key={movie.id} movie={movie} />;
                     })}
                   </tbody>
