@@ -17,4 +17,4 @@ The Letter Box Web App caters to movie enthusiasts, providing them with the abil
 
 ## Preview Application
 
-You can preview the Letter Box Web App by clicking on the following link: [Preview Application](https://drive.google.com/drive/folders/18oDgYflkVNqepBa2jjT3BirpQRhyeQxt?usp=sharing)
+Screenshot Application: [Link to Screenshot Folder](https://drive.google.com/drive/folders/18oDgYflkVNqepBa2jjT3BirpQRhyeQxt?usp=sharing)
